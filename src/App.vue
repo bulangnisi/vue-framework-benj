@@ -34,11 +34,11 @@ export default {
 
 <style>
 #app {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  height: 100%;
 }
 </style>

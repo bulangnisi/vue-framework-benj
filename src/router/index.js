@@ -6,17 +6,22 @@ Vue.use(Router)
 export const constantRoutes = [
   {
     path: '/',
-    redirect: '/page1'
+    redirect: '/draw'
+  },
+  {
+    path: '/draw',
+    component: () => import('@/views/draw.vue'),
+    meta: { inxde: 1 }
   },
   {
     path: '/page1',
     component: () => import('@/views/page1.vue'),
-    meta: { index: 1 }
+    meta: { index: 2 }
   },
   {
     path: '/page2',
     component: () => import('@/views/page2.vue'),
-    meta: { index: 2 }
+    meta: { index: 3 }
   }
 ]
 

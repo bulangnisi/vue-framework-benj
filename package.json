@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "clear && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "push": "lint-staged"
+    "preview": "vue-cli-service build --preview --report"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -29,6 +29,7 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "chalk": "^4.1.0",
     "compression-webpack-plugin": "^6.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.0",
@@ -38,6 +39,7 @@
     "lint-staged": "^10.5.3",
     "sass": "^1.27.0",
     "sass-loader": "^10.0.3",
+    "script-ext-html-webpack-plugin": "^2.1.5",
     "stylelint": "^13.8.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recess-order": "^2.3.0",
@@ -47,7 +49,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "g"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {

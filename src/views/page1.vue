@@ -1,11 +1,19 @@
 <template>
   <ext-pull-refresh :refreshing="isRefresh" :on-refresh="onRefresh">
     <div class="container">
+      <ExtTest />
       <input v-model="text" type="text" />
       <button @click="handleClick">set</button>
       <button @click="handleLocale">{{ locale }}</button>
       <button @click="handleToast">toast</button>
       <button @click="handleLoading">loading</button>
+      <div class="vwtest">use vw unit</div>
+      <div class="fonttest">
+        <span class="fontrem">中文</span>
+        <span class="fontrem">English</span>
+        <span class="none">中文</span>
+        <span class="none">English</span>
+      </div>
       <div>
         store fields:
         <span>{{ testText }}</span>
@@ -31,10 +39,12 @@ import { mapGetters } from 'vuex'
 import { showToast } from '@/common/utils'
 // import { set, get } from '@/common/localStorage'
 import localStorage from '@/common/localStorage'
+import ExtTest from '@/components/ExtTest'
 export default {
   name: 'Page1',
   components: {
-    ExtPullRefresh
+    ExtPullRefresh,
+    ExtTest
   },
   data() {
     return {
@@ -114,15 +124,19 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  position: relative;
-  height: 100%;
-  overflow-y: hidden;
-  color: red;
-  .abb {
-    position: relative;
-    width: 10px;
-    height: 200px;
-    border-radius: 2px red;
+  .fonttest {
+    .fontrem {
+      font-size: 16px;
+    }
+    .none {
+      color: blue;
+    }
   }
 }
+.vwtest {
+  width: 10vw;
+  height: 60px;
+  background-color: red;
+}
+// 1rem = 12 px
 </style>
