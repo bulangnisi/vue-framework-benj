@@ -22,9 +22,8 @@ selenium-debug.log
 package-lock.json
 yarn.lock
 
-README.md
 API.md
 transfer.js
 transferData.txt
 
-README.md
+REMARK.md
